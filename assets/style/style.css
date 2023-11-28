@@ -1,0 +1,262 @@
+/*adding styles*/
+:root {
+  --gold: rgb(192, 160, 98);
+  --blue: rgb(0, 51, 90);
+  --gray: rgb(64, 60, 58);
+  --light-gray: rgb(157, 156, 155);
+  --t-blue: rgba(0, 51, 90, 0.5);
+}
+
+/*default*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "General Sans", sans-serif;
+  line-height: 1.15;
+}
+
+/*========== @media ==========*/
+@media screen and (min-width: 48em) {
+  .site-logo {
+    width: 307px;
+    height: 86px;
+    word-spacing: 0.1em;
+  }
+  .link-logo h2:only-of-type {
+    font-size: 1.5rem;
+  }
+}
+
+/*========== Back to Top Button ===========*/
+#scroll-btn {
+  display: inline-block;
+  background-color: var(--light-gray);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-style: none;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  transition: background-color 0.3s, opacity 0.5s,
+    visibility 0.5s transform 0.5s;
+  opacity: 0;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 35px;
+  color: var(--blue);
+  text-align: center;
+}
+
+#scroll-btn.show {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+
+#scroll-btn:active {
+  background-color: var(--light-gray);
+}
+
+/*============= Navigation bar =================*/
+
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  background: #fff;
+  border-bottom-color: black;
+  z-index: 10000000;
+}
+
+.navbar {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  width: 90%;
+  position: relative;
+  justify-content: space-between;
+}
+
+/*--------- Navigation logo -----------*/
+
+.site-logo {
+  height: 7em;
+}
+
+a.link-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.link-logo img {
+  width: 100%;
+  height: 19vh;
+}
+
+.nav-btn {
+  position: absolute;
+  right: 1%;
+  border-style: none;
+  display: flex;
+  top: 65%;
+  z-index: 10000;
+}
+
+/*----------- Search button ---------*/
+.search-toggle {
+  border-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 14vh;
+  background: var(--gray);
+  margin-right: 0.2em;
+}
+
+#search-toggle-btn span {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+}
+
+#search-toggle-btn p {
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Tanker", sans-serif;
+}
+
+.navbar.sticky .nav-btn {
+  top: 0%;
+}
+
+/*----------- Menu button -----------*/
+.menu-toggle {
+  border-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 14vh;
+  color: white;
+  background: var(--blue);
+}
+
+#menu-toggle-btn {
+  border-style: none;
+  width: 50px;
+  height: 50px;
+}
+
+#menu-toggle-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menu-toggle-btn span:not(span:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+#menu-toggle-btn span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menu-toggle-btn span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menu-toggle-btn p {
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-family: "Tanker", sans-serif;
+}
+
+/*=========== Menu ============*/
+
+/*========= Header ==========*/
+header {
+  padding-top: 100px;
+  width: 100%;
+  height: 49vh;
+  background-image: url("/assets/images/CS_Banner.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+  margin-bottom: 5%;
+}
+
+.text-container {
+  width: 60%;
+  position: relative;
+  top: 50%;
+  color: white;
+  text-transform: uppercase;
+  background: var(--t-blue);
+  padding: 20px 80px;
+}
+
+.text-container h3 {
+  font-size: 1.8rem;
+}
+
+.text-container h2 {
+  font-size: 3rem;
+  letter-spacing: em;
+}
+
+/*========== Section ==========*/
+section {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+section main,
+section aside {
+  border-top-style: solid;
+  border-top-width: 5px;
+  padding-top: 20px;
+  width: 25%;
+}
+
+section main {
+  width: 70%;
+  text-align: justify;
+}
+
+section main h5 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+section main p {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+section aside ul {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+section aside ul li {
+  padding: 15px 0;
+}
+
+/*========= Footer ==========*/
